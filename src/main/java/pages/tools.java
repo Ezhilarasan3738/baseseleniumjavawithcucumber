@@ -31,7 +31,7 @@ public class tools {
     }
 
     public void closeWindow() {
-        driver.close1();
+        driver.close();
         System.out.println("All cases executed");
     }
 
