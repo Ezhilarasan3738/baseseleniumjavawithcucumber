@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features",
-		glue = "stepdefinition",
+		features = "src/test/resources/features/FTK/USRMR2025/2502/google.feature",
+		glue = {"ftkstepdefinition"},
+		tags = "@current",
 		plugin= {"pretty","html:target/cucumber.html"}
 )
 public class TestRunner {
