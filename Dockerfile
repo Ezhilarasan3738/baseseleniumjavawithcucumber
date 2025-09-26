@@ -34,7 +34,7 @@ WORKDIR /app
 # For Cucumber/Selenium, you usually copy the compiled classes and dependencies
 COPY --from=build /app/target/classes /app/classes
 COPY --from=build /app/target/test-classes /app/test-classes
-COPY --from=build /root/.m2/repository /root/.m2/repository  # Copy dependencies
+COPY --from=build /root/.m2/repository /root/.m2/repository
 
 # Copy any necessary configuration files (e.g., Log4j config, test properties)
 COPY src/test/resources /app/resources
