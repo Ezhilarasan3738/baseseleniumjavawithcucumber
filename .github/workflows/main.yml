@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+# 1. Trigger: When should this workflow run?
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# 2. Jobs: A workflow is made up of one or more jobs
+jobs:
+  # Job 1: A job named 'build'
+  build:
+    # 3. Environment: Specify the runner environment
+    runs-on: ubuntu-latest
+
+    # 4. Steps: A job contains a sequence of steps
+    steps:
+      # Step 1: Use a predefined 'action' to check out the code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      # Step 2: Run a shell command
+      - name: Print a greeting
+        run: echo "The simple CI job is running on branch ${{ github.ref_name }}."
+      
+      # Step 3: Another shell command example
+      - name: List files
+        run: ls -al
