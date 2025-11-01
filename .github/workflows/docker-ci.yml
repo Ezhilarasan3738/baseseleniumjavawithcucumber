@@ -40,7 +40,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: your-docker-hub-username/your-repo-name # Replace with your Docker Hub details
+          images: ezhil3738/baseseleniumjavawithcucumber
           tags: |
             type=schedule
             type=ref,event=branch
@@ -51,8 +51,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: . # Build context: the root of your repo, where the Dockerfile is located
-          file: ./Dockerfile # The path to your Dockerfile (optional if named Dockerfile in context)
+          context: . 
+          file: ./Dockerfile 
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
